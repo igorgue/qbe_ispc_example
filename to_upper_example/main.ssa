@@ -1,0 +1,12 @@
+# main.ssa
+export function w $main() {
+    @start
+        %r0 = w copy $hello
+        call $to_upper(w %r0, w 11)
+        call $printf(l $fmt, ..., w %r0, w %r0)
+    @end
+        ret 0
+}
+
+data $hello = { b "hello world", b 0 }
+data $fmt = { b "res: %s!\n", b 0 }
